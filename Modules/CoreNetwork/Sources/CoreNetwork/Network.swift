@@ -1,87 +1,65 @@
 //
-//  Network.swift
-//  ioasys books
+//  NetworkService.swift
+//  CleanMovies
 //
-//  Created by Victor Colen on 15/02/22.
+//  Created by Victor Colen on 27/03/22.
 //
 
 import Foundation
 
-public struct Network {
+protocol APIClientProtocol {
+    static func request<T: Codable>(
+        httpMethod: String?,
+        headers: [String: String]?,
+        httpBody: Data?,
+        dataType: T.Type,
+        url: String,
+        completion: @escaping ((Result<T, Error>, URLResponse) -> Void)
+    )
+}
 
-    public static func loginUser(
-        //        email: String,
-        //        password: String,
-        completion: @escaping ((Data?, URLResponse?, Error?) -> Void)
-    ) {
-        let postUrl = URL(string: "https://empresas.ioasys.com.br/api/v1/users/auth/sign_in")
-        guard let postUrl = postUrl else {
-            return
+class Network: APIClientProtocol {
+    static func request<T>(
+        httpMethod: String? = "GET",
+        headers: [String: String]? = nil,
+        httpBody: Data? = nil,
+        dataType: T.Type,
+        url: String,
+        completion: @escaping ((Result<T, Error>, URLResponse) -> Void)
+    ) where T: Codable {
+
+        guard let url = URL(string: url) else { return }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod
+
+        if let httpBody = httpBody {
+            urlRequest.httpBody = httpBody
         }
-        var request = URLRequest(url: postUrl)
-        guard let data: Data = "email=testeapple@ioasys.com.br&password=12341234&grant_type=password"
-            .data(using: .utf8) else {
-            return
+
+        if let headers = headers {
+            for header in headers {
+                urlRequest.addValue(header.value, forHTTPHeaderField: header.key)
+            }
         }
-        request.httpMethod = "POST"
-        request.httpBody = data
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            completion(data, response, error)
+
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            DispatchQueue.main.async {
+                guard let response = response else {
+                    return
+                }
+
+                if let error = error {
+                    completion(.failure(error), response)
+                } else if let data = data {
+                    do {
+                        let safeData = try JSONDecoder().decode(T.self, from: data)
+                        completion(.success(safeData), response)
+                    } catch {
+                        completion(.failure(error), response)
+                    }
+                }
+            }
         }.resume()
     }
-
-    public static func fetchCompanies(
-        client: String,
-        accessToken: String,
-        uid: String,
-        completion: @escaping ((Data?, URLResponse?, Error?) -> Void)
-    ) {
-        guard let url = URL(string: "https://empresas.ioasys.com.br/api/v1/enterprises") else { return }
-        var getRequest = URLRequest(url: url)
-        getRequest.addValue("\(client)", forHTTPHeaderField: "client")
-        getRequest.addValue("\(accessToken)", forHTTPHeaderField: "access-token")
-        getRequest.addValue("\(uid)", forHTTPHeaderField: "uid")
-        URLSession.shared.dataTask(with: getRequest) { data, response, error in
-            completion(data, response, error)
-        }.resume()
-    }
-
-    public static func fetchCompaniesByName(
-        name: String,
-        client: String,
-        accessToken: String,
-        uid: String,
-        completion: @escaping ((Data?, URLResponse?, Error?) -> Void)
-    ) {
-        guard let url = URL(string: "https://empresas.ioasys.com.br/api/v1/enterprises?name=\(name)") else {
-            return
-        }
-        var getRequest = URLRequest(url: url)
-        getRequest.addValue("\(client)", forHTTPHeaderField: "client")
-        getRequest.addValue("\(accessToken)", forHTTPHeaderField: "access-token")
-        getRequest.addValue("\(uid)", forHTTPHeaderField: "uid")
-        URLSession.shared.dataTask(with: getRequest) { data, response, error in
-            completion(data, response, error)
-        }.resume()
-    }
-
-    public static func fetchCompanyById(
-        id: String,
-        client: String,
-        accessToken: String,
-        uid: String,
-        completion: @escaping ((Data?, URLResponse?, Error?) -> Void)
-    ) {
-        guard let url = URL(string: "https://empresas.ioasys.com.br/api/v1/enterprises/\(id)") else {
-            return
-        }
-        var getRequest = URLRequest(url: url)
-        getRequest.addValue("\(client)", forHTTPHeaderField: "client")
-        getRequest.addValue("\(accessToken)", forHTTPHeaderField: "access-token")
-        getRequest.addValue("\(uid)", forHTTPHeaderField: "uid")
-        URLSession.shared.dataTask(with: getRequest) { data, response, error in
-            completion(data, response, error)
-        }.resume()
-    }
-
 }

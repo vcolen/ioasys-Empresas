@@ -13,16 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-        Network.loginUser { data, response, _ in
-            if let response = response as? HTTPURLResponse {
-                Network.fetchCompanyById(
-                    id: "1",
+        EnterpriseNetwork.loginUser { response in
+            if  response.statusCode == 200 {
+                EnterpriseNetwork.fetchCompanyById(
+                    id: "3",
                     client: response.value(forHTTPHeaderField: "client") ?? "",
                     accessToken: response.value(forHTTPHeaderField: "access-token") ?? "",
                     uid: response.value(forHTTPHeaderField: "uid") ?? ""
-                ) { data, _, _ in
+                ) { data in
                     print(data)
                 }
+            } else {
+                print("deu ruim")
             }
         }
     }
