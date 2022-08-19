@@ -12,6 +12,13 @@
 		793EAAC428AFAF5D005858D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EAAC328AFAF5D005858D2 /* ViewController.swift */; };
 		793EAAC928AFAF5F005858D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793EAAC828AFAF5F005858D2 /* Assets.xcassets */; };
 		793EAACC28AFAF5F005858D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793EAACA28AFAF5F005858D2 /* LaunchScreen.storyboard */; };
+		793EAADF28AFB899005858D2 /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAADE28AFB899005858D2 /* CoreKit */; };
+		793EAAE128AFB899005858D2 /* CoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAAE028AFB899005858D2 /* CoreNetwork */; };
+		793EAAE328AFB899005858D2 /* CoreScene in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAAE228AFB899005858D2 /* CoreScene */; };
+		793EAAE528AFB899005858D2 /* CoreStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAAE428AFB899005858D2 /* CoreStorage */; };
+		793EAAE728AFB899005858D2 /* DataKit in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAAE628AFB899005858D2 /* DataKit */; };
+		793EAAE928AFB899005858D2 /* EmpresasUI in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAAE828AFB899005858D2 /* EmpresasUI */; };
+		793EAAEB28AFB899005858D2 /* InjectionKit in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAAEA28AFB899005858D2 /* InjectionKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		793EAAC828AFAF5F005858D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		793EAACB28AFAF5F005858D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		793EAACD28AFAF5F005858D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		793EAAD628AFB6A4005858D2 /* CoreKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreKit; sourceTree = "<group>"; };
+		793EAAD728AFB6BA005858D2 /* DataKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataKit; sourceTree = "<group>"; };
+		793EAAD828AFB6C8005858D2 /* CoreNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreNetwork; sourceTree = "<group>"; };
+		793EAAD928AFB6F6005858D2 /* EmpresasUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EmpresasUI; sourceTree = "<group>"; };
+		793EAADA28AFB705005858D2 /* CoreStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreStorage; sourceTree = "<group>"; };
+		793EAADB28AFB71B005858D2 /* CoreScene */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreScene; sourceTree = "<group>"; };
+		793EAADC28AFB777005858D2 /* InjectionKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = InjectionKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793EAAE128AFB899005858D2 /* CoreNetwork in Frameworks */,
+				793EAAE728AFB899005858D2 /* DataKit in Frameworks */,
+				793EAAEB28AFB899005858D2 /* InjectionKit in Frameworks */,
+				793EAAE928AFB899005858D2 /* EmpresasUI in Frameworks */,
+				793EAAE528AFB899005858D2 /* CoreStorage in Frameworks */,
+				793EAAE328AFB899005858D2 /* CoreScene in Frameworks */,
+				793EAADF28AFB899005858D2 /* CoreKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +59,10 @@
 		793EAAB328AFAF5D005858D2 = {
 			isa = PBXGroup;
 			children = (
+				793EAAD428AFB594005858D2 /* Modules */,
 				793EAABE28AFAF5D005858D2 /* ioasys Empresas */,
 				793EAABD28AFAF5D005858D2 /* Products */,
+				793EAADD28AFB899005858D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +87,35 @@
 			path = "ioasys Empresas";
 			sourceTree = "<group>";
 		};
+		793EAAD428AFB594005858D2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				793EAAD628AFB6A4005858D2 /* CoreKit */,
+				793EAAD828AFB6C8005858D2 /* CoreNetwork */,
+				793EAADB28AFB71B005858D2 /* CoreScene */,
+				793EAADA28AFB705005858D2 /* CoreStorage */,
+				793EAAD728AFB6BA005858D2 /* DataKit */,
+				793EAAD928AFB6F6005858D2 /* EmpresasUI */,
+				793EAAD528AFB5A6005858D2 /* Features */,
+				793EAADC28AFB777005858D2 /* InjectionKit */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		793EAAD528AFB5A6005858D2 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		793EAADD28AFB899005858D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,6 +133,15 @@
 			dependencies = (
 			);
 			name = "ioasys Empresas";
+			packageProductDependencies = (
+				793EAADE28AFB899005858D2 /* CoreKit */,
+				793EAAE028AFB899005858D2 /* CoreNetwork */,
+				793EAAE228AFB899005858D2 /* CoreScene */,
+				793EAAE428AFB899005858D2 /* CoreStorage */,
+				793EAAE628AFB899005858D2 /* DataKit */,
+				793EAAE828AFB899005858D2 /* EmpresasUI */,
+				793EAAEA28AFB899005858D2 /* InjectionKit */,
+			);
 			productName = "ioasys Empresas";
 			productReference = 793EAABC28AFAF5D005858D2 /* ioasys Empresas.app */;
 			productType = "com.apple.product-type.application";
@@ -365,6 +426,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		793EAADE28AFB899005858D2 /* CoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreKit;
+		};
+		793EAAE028AFB899005858D2 /* CoreNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreNetwork;
+		};
+		793EAAE228AFB899005858D2 /* CoreScene */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreScene;
+		};
+		793EAAE428AFB899005858D2 /* CoreStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreStorage;
+		};
+		793EAAE628AFB899005858D2 /* DataKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataKit;
+		};
+		793EAAE828AFB899005858D2 /* EmpresasUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EmpresasUI;
+		};
+		793EAAEA28AFB899005858D2 /* InjectionKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = InjectionKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 793EAAB428AFAF5D005858D2 /* Project object */;
 }
