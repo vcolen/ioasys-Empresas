@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable function_parameter_count
 protocol APIClientProtocol {
     static func request<T: Codable>(
         httpMethod: String?,

@@ -23,7 +23,7 @@ public struct EnterpriseNetwork {
         Network.request(
             httpMethod: "POST",
             httpBody: data,
-            dataType: Investor.self,
+            dataType: InvestorResponse.self,
             url: "https://empresas.ioasys.com.br/api/v1/users/auth/sign_in"
         ) { _, response in
             guard let response = response as? HTTPURLResponse else {
