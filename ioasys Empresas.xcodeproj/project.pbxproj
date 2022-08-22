@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793A825628B3DBA10038464F /* HomeFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 793A825528B3DBA10038464F /* HomeFeature */; };
+		793A825828B3DBA10038464F /* LoginFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 793A825728B3DBA10038464F /* LoginFeature */; };
 		793EAAC028AFAF5D005858D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EAABF28AFAF5D005858D2 /* AppDelegate.swift */; };
 		793EAAC228AFAF5D005858D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EAAC128AFAF5D005858D2 /* SceneDelegate.swift */; };
-		793EAAC428AFAF5D005858D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793EAAC328AFAF5D005858D2 /* ViewController.swift */; };
 		793EAAC928AFAF5F005858D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793EAAC828AFAF5F005858D2 /* Assets.xcassets */; };
 		793EAACC28AFAF5F005858D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 793EAACA28AFAF5F005858D2 /* LaunchScreen.storyboard */; };
 		793EAADF28AFB899005858D2 /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 793EAADE28AFB899005858D2 /* CoreKit */; };
@@ -22,10 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		793A825328B3DA260038464F /* LoginFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LoginFeature; sourceTree = "<group>"; };
+		793A825428B3DAF00038464F /* HomeFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HomeFeature; sourceTree = "<group>"; };
+		793E99C728B3F04900FAF43D /* CoreApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CoreApp; path = ../../CoreApp; sourceTree = "<group>"; };
 		793EAABC28AFAF5D005858D2 /* ioasys Empresas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ioasys Empresas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		793EAABF28AFAF5D005858D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		793EAAC128AFAF5D005858D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		793EAAC328AFAF5D005858D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		793EAAC828AFAF5F005858D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		793EAACB28AFAF5F005858D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		793EAACD28AFAF5F005858D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,11 +46,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793A825628B3DBA10038464F /* HomeFeature in Frameworks */,
 				793EAAE128AFB899005858D2 /* CoreNetwork in Frameworks */,
 				793EAAE728AFB899005858D2 /* DataKit in Frameworks */,
 				793EAAEB28AFB899005858D2 /* InjectionKit in Frameworks */,
 				793EAAE928AFB899005858D2 /* EmpresasUI in Frameworks */,
 				793EAAE528AFB899005858D2 /* CoreStorage in Frameworks */,
+				793A825828B3DBA10038464F /* LoginFeature in Frameworks */,
 				793EAAE328AFB899005858D2 /* CoreScene in Frameworks */,
 				793EAADF28AFB899005858D2 /* CoreKit in Frameworks */,
 			);
@@ -79,7 +84,6 @@
 			children = (
 				793EAABF28AFAF5D005858D2 /* AppDelegate.swift */,
 				793EAAC128AFAF5D005858D2 /* SceneDelegate.swift */,
-				793EAAC328AFAF5D005858D2 /* ViewController.swift */,
 				793EAAC828AFAF5F005858D2 /* Assets.xcassets */,
 				793EAACA28AFAF5F005858D2 /* LaunchScreen.storyboard */,
 				793EAACD28AFAF5F005858D2 /* Info.plist */,
@@ -90,6 +94,7 @@
 		793EAAD428AFB594005858D2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				793E99C728B3F04900FAF43D /* CoreApp */,
 				793EAAD628AFB6A4005858D2 /* CoreKit */,
 				793EAAD828AFB6C8005858D2 /* CoreNetwork */,
 				793EAADB28AFB71B005858D2 /* CoreScene */,
@@ -105,6 +110,8 @@
 		793EAAD528AFB5A6005858D2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				793A825428B3DAF00038464F /* HomeFeature */,
+				793A825328B3DA260038464F /* LoginFeature */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -141,6 +148,8 @@
 				793EAAE628AFB899005858D2 /* DataKit */,
 				793EAAE828AFB899005858D2 /* EmpresasUI */,
 				793EAAEA28AFB899005858D2 /* InjectionKit */,
+				793A825528B3DBA10038464F /* HomeFeature */,
+				793A825728B3DBA10038464F /* LoginFeature */,
 			);
 			productName = "ioasys Empresas";
 			productReference = 793EAABC28AFAF5D005858D2 /* ioasys Empresas.app */;
@@ -216,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				793EAAC428AFAF5D005858D2 /* ViewController.swift in Sources */,
 				793EAAC028AFAF5D005858D2 /* AppDelegate.swift in Sources */,
 				793EAAC228AFAF5D005858D2 /* SceneDelegate.swift in Sources */,
 			);
@@ -428,6 +436,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		793A825528B3DBA10038464F /* HomeFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeFeature;
+		};
+		793A825728B3DBA10038464F /* LoginFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoginFeature;
+		};
 		793EAADE28AFB899005858D2 /* CoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreKit;

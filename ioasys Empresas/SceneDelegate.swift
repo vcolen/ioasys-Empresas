@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LoginFeature
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         if let window = window {
             window.windowScene = windowScene
-            window.rootViewController = UINavigationController(rootViewController: ViewController())
+            window.rootViewController = UINavigationController(rootViewController: LoginViewController())
             window.makeKeyAndVisible()
         }
     }
