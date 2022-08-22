@@ -1,19 +1,27 @@
 //
-//  File.swift
+//  LoginUseCase.swift
 //
 //
 //  Created by Victor Colen on 22/08/22.
 //
 
 import Foundation
+import InjectionKit
 
-protocol LoginUseCaseProtocol {
-    func login(email: String, password: String)
+public protocol LoginUseCaseProtocol {
+    func loginUser(email: String, password: String)
 }
 
-class LoginUseCase: LoginUseCaseProtocol {
-    func login(email: String, password: String) {
+public class LoginUseCase {
+    // MARK: - Properties
+    @Injected var loginRepositoryProtocol: LoginRepositoryProtocol
 
+    // MARK: - Initializer
+    public init() { }
+}
+
+extension LoginUseCase: LoginUseCaseProtocol {
+    public func loginUser(email: String, password: String) {
+        loginRepositoryProtocol.loginUser(email: email, password: password)
     }
-
 }

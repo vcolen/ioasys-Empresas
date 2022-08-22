@@ -16,16 +16,20 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            name: "CoreNetwork",
-            path: "../../CoreNetwork"
-        ),
-        .package(
             name: "EmpresasUI",
             path: "../../EmpresasUI"
         ),
         .package(
             name: "CoreApp",
             path: "../../CoreApp"
+        ),
+        .package(
+            name: "CoreKit",
+            path: "../../CoreKit"
+        ),
+        .package(
+            name: "InjectionKit",
+            path: "../../InjectionKit"
         )
     ],
     targets: [
@@ -34,9 +38,10 @@ let package = Package(
         .target(
             name: "LoginFeature",
             dependencies: [
-                "CoreNetwork",
                 "EmpresasUI",
-                "CoreApp"
+                "CoreApp",
+                "CoreKit",
+                "InjectionKit"
             ])
     ]
 )

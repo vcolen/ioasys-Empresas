@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  LoginCoordinating.swift
 //
 //
 //  Created by Victor Colen on 22/08/22.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol LoginCoordinating {
-
+public protocol LoginCoordinating {
+    func showHome()
 }
